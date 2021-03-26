@@ -3,7 +3,8 @@ module.exports = {
     loaderOptions: {
       sass: {
         prependData: `
-        @import "@/styles/styles.sass"
+        @use "@/styles/colors"
+        @use "@/styles/utils"
         `
       },
     }

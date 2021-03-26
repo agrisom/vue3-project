@@ -1,0 +1,19 @@
+@use "../colors"
+
+@mixin light-theme
+  --bg-color-main: #{colors.$color-white}
+  --bg-color-secondary: #{colors.$color-white-0}
+
+@mixin dark-theme
+  --bg-color-main: $color-white
+  --bg-color-secondary: $color-white-0
+
+:root
+  @include light-theme
+  &.dark-theme
+    @include dark-theme
+
+  @media (prefers-color-scheme: dark)
+    @include dark-theme
+    &.light-theme
+      @include light-theme

@@ -1,0 +1,23 @@
+@use "../colors"
+@use "../utils/variables"
+
+@mixin minimal-scrollbar
+  &::-webkit-scrollbar
+    width: $gutter*2
+    &-thumb
+      border-radius: $gutter
+      background: $color-grey-light-1
+  &:hover
+    &::-webkit-scrollbar
+      display: block
+
+@mixin minimal-scrollbar-hidden
+  &::-webkit-scrollbar
+    display: none
+    width: $gutter*2
+    &-thumb
+      border-radius: $gutter
+      background: $color-grey-light-1
+  &:hover
+    &::-webkit-scrollbar
+      display: block

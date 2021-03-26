@@ -1,5 +1,5 @@
 <template lang="pug">
-.home
+.container.home
   img(alt="Vue logo" src="../assets/logo.png")
   HelloWorld(msg="Welcome to Your Vue.js + TypeScript App")
 </template>
@@ -15,3 +15,8 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="sass" scoped>
+.home
+  text-align: center
+</style>
