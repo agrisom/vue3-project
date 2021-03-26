@@ -1,12 +1,19 @@
 @use "../colors"
 
+:root
+
 @mixin light-theme
-  --bg-color-main: #{colors.$color-white}
-  --bg-color-secondary: #{colors.$color-white-0}
+  --bg-color-main: #{colors.$color-white-0}
+  --bg-color-secondary: #{colors.$color-white}
+  --color-primary: #{colors.$color-primary}
+  --link-color: #{colors.$color-primary}
+  --link-color-selected: #{colors.$color-secondary}
+  --link-color-hover: #{colors.$color-secondary}
 
 @mixin dark-theme
-  --bg-color-main: $color-white
-  --bg-color-secondary: $color-white-0
+  --bg-color-main: #{colors.$color-white}
+  --bg-color-secondary: #{colors.$color-white-0}
+  --color-primary: #{colors.$color-primary}
 
 :root
   @include light-theme

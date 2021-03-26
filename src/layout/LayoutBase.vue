@@ -1,11 +1,12 @@
 <template lang="pug">
 .layout.layout--base
-  header.layout__header
-    slot(name='header')
   aside.layout__aside
     slot(name='aside')
   main.layout__main
-    slot(name='content')
+    header.layout__header
+      slot(name='header')
+    .layout__content
+      slot(name='content')
   .modal.layout__dialog
     slot(name='dialog')
 </template>
@@ -20,6 +21,6 @@ export default defineComponent({
 
 <style lang="sass">
 .layout__main
-  @include utils.light-dark(--courses-background-color, red, #{colors.$color-secondary})
-  background-color: var(--courses-background-color)
+  //@include utils.light-dark(--courses-background-color, red, #{colors.$color-secondary})
+  background-color: var(--bg-color-main)
 </style>
