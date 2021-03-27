@@ -1,13 +1,15 @@
 <template lang="pug">
 LayoutBase
-  template(v-slot:aside)
+  template(v-slot:left-side)
     SideNav
   template(v-slot:header)
     Header
   template(v-slot:content)
     router-view
+  template(v-slot:right-side)
+    // empty slot
   template(v-slot:dialog)
-    p test
+    // empty slot
 .svgsprites
   include ./assets/sprite-local.svg
 </template>

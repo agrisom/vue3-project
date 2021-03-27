@@ -12,6 +12,8 @@ nav.mainnav
       router-link.mainnav__link(:to="{name: 'Home'}") Home
     li.mainnav__item
       router-link.mainnav__link(:to="{name: 'About'}") About
+    li.mainnav__item
+      router-link.mainnav__link(:to="{name: 'LayoutSample'}") Layout Sample
 </template>
 
 <script lang="ts">

@@ -1,12 +1,13 @@
 <template lang="pug">
 .layout.layout--base
-  aside.layout__aside
-    slot(name='aside')
+  header.layout__header
+    slot(name='header')
+  aside.layout__left-side
+    slot(name='left-side')
   main.layout__main
-    header.layout__header
-      slot(name='header')
-    .layout__content
-      slot(name='content')
+    slot(name='content')
+  aside.layout__right-side
+    slot(name='right-side')
   .modal.layout__dialog
     slot(name='dialog')
 </template>
@@ -20,7 +21,4 @@ export default defineComponent({
 </script>
 
 <style lang="sass">
-.layout__main
-  //@include utils.light-dark(--courses-background-color, red, #{colors.$color-secondary})
-  background-color: var(--bg-color-main)
 </style>
