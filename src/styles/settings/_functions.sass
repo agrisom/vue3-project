@@ -1,5 +1,24 @@
-@use "../colors"
-@use "../utils/variables"
+@use "./colors"
+@use "./variables"
+
+// mixin for components
+@mixin light-dark($key, $light, $dark)
+  #{$key}: $light
+  .dark-theme &
+    #{$key}: $dark
+
+  @media (prefers-color-scheme: dark)
+    #{$key}: $dark
+    .light-theme &
+      #{$key}: $light
+
+@mixin fade-in
+  &-enter-active, &-leave-active
+    transition: all 1s
+  &-move
+    transition: all .5s
+  &-enter-from, &-leave-to
+    opacity: 0
 
 @mixin minimal-scrollbar
   &::-webkit-scrollbar

@@ -17,8 +17,13 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/sample/layout',
-    name: 'LayoutSample',
-    component: () => import('../views/LayoutSample.vue')
+    name: 'SampleLayout',
+    component: () => import('../views/SampleLayout.vue')
+  },
+  {
+    path: '/sample/button',
+    name: 'SampleButton',
+    component: () => import('../components/Button/SampleButton.vue')
   },
 ]
 

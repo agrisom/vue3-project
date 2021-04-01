@@ -1,7 +1,7 @@
 <template lang="pug">
 LayoutBase
   template(v-slot:left-side)
-    SideNav
+    Menu(:links="links" direction="column")
   template(v-slot:header)
     Header
   template(v-slot:content)
@@ -18,15 +18,35 @@ LayoutBase
 import { defineComponent } from 'vue'
 import LayoutBase from '@/layout/LayoutBase.vue'
 import Header from '@/layout/Header.vue'
-import SideNav from '@/layout/SideNav.vue'
+import Menu from '@/components/Menu/Menu.vue'
 
 export default defineComponent({
   name: "App",
   components: {
     LayoutBase,
     Header,
-    SideNav,
-  }
+    Menu,
+  },
+  data: () => ({
+    links: [
+      {
+        title: 'home',
+        pageName: 'Home',
+      }, {
+        title: 'about',
+        pageName: 'About',
+      }, {
+        title: 'components',
+        links: [{
+          title: 'layout',
+          pageName: 'SampleLayout',
+        }, {
+          title: 'Button',
+          pageName: 'SampleButton',
+        }],
+      },
+    ],
+  }),
 })
 </script>
 

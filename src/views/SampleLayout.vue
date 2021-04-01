@@ -81,7 +81,7 @@
 .column
   &__grid
     display: grid
-    grid-gap: utils.$gutter*4
+    grid-gap: variables.$gutter*4
     &--grow
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
     &--no-grow
@@ -94,13 +94,13 @@
   &__container
     height: auto
     display: grid
-    grid-gap: utils.$gutter*4
+    grid-gap: variables.$gutter*4
     grid-template-columns: repeat(3, 1fr)
   &__item
     outline: 1px solid red
     display: flex
     flex-direction: column
-    padding: utils.$gutter*4
+    padding: variables.$gutter*4
     justify-content: space-between
   &__title
   &__content Card short description

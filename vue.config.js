@@ -3,8 +3,9 @@ module.exports = {
     loaderOptions: {
       sass: {
         prependData: `
-        @use "@/styles/colors"
-        @use "@/styles/utils"
+        @use "@/styles/settings/_colors"
+        @use "@/styles/settings/_functions"
+        @use "@/styles/settings/_variables"
         `
       },
     }

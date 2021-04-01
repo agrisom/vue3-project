@@ -1,5 +1,5 @@
-@use "../utils/variables"
-@use "../utils/functions"
+@use "../settings/variables"
+@use "../settings/functions"
 
 .layout
   display: grid
@@ -11,6 +11,8 @@
   &__left-side
     background: var(--bg-color-side)
     grid-column: 1 / 2
+    overflow: auto
+    padding: variables.$gutter*2
   &__main
     grid-column: 2 / 3
     overflow: auto

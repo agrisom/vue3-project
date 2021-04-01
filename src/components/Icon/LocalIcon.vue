@@ -1,5 +1,5 @@
 <template lang="pug">
-svg.icon(:class="['icon--' + size, {'icon--black': theme}, {'icon--custom-color': color}, {'icon--custom-sizes': width || height}]")
+svg.icon(:class="['icon--' + size, {'icon--theme': theme}, {'icon--custom-color': color}, {'icon--custom-sizes': width || height}]")
   title(v-if="title") {{ title }}
   desc(v-if="description") {{ description }}
   use(:xlink:href="'#' + name")
@@ -20,8 +20,8 @@ export default defineComponent({
       required: false
     },
 		theme: {
-      type: String,
-      required: false
+      type: Boolean,
+      default: false
     },
     title: {
       type: String,
@@ -55,23 +55,22 @@ export default defineComponent({
   max-height: 100%
   display: inline-block
   color: var(--color-primary-dark)
-  &--black
-    //@include light-dark(--icon-color-black, var(--color-black), var(--color-primary-dark))
-    color: colors.$color-black
+  &--theme
+    color: var(--main-font-color)
   &--custom-color
     color: v-bind(color)
   &--sm
-    width: utils.$gutter*6
-    height: utils.$gutter*5
+    width: variables.$gutter*6
+    height: variables.$gutter*5
   &--md
-    width: utils.$gutter*11
-    height: utils.$gutter*10
+    width: variables.$gutter*11
+    height: variables.$gutter*10
   &--xl
-    width: utils.$gutter*16
-    height: utils.$gutter*15
+    width: variables.$gutter*16
+    height: variables.$gutter*15
   &--xxl
-    width: utils.$gutter*41
-    height: utils.$gutter*40
+    width: variables.$gutter*41
+    height: variables.$gutter*40
   &--custom-sizes
     width: v-bind(width)
     height: v-bind(height)
