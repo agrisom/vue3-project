@@ -69,6 +69,7 @@ export default defineComponent({
       width: max-content
     &--open
       display: block
+      z-index: 1
     & ul
       display: block
       li

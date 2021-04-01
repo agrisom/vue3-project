@@ -23,6 +23,7 @@ import { defineComponent } from 'vue'
 import Switch from '@/components/Switch/Switch.vue';
 import LocalIcon from '@/components/Icon/LocalIcon.vue';
 import Menu from '@/components/Menu/Menu.vue';
+import { links } from '@/store/globals';
 
 export default defineComponent({
   name: "Header",
@@ -33,24 +34,7 @@ export default defineComponent({
   },
   data: () => ({
     darkTheme: false,
-    links: [
-      {
-        title: 'home',
-        pageName: 'Home',
-      }, {
-        title: 'about',
-        pageName: 'About',
-      }, {
-        title: 'components',
-        links: [{
-          title: 'layout',
-          pageName: 'SampleLayout',
-        }, {
-          title: 'Button',
-          pageName: 'SampleButton',
-        }],
-      },
-    ],
+    links,
   }),
   created() {
     this.darkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;

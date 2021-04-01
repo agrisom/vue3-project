@@ -103,7 +103,6 @@
     padding: variables.$gutter*4
     justify-content: space-between
   &__title
-  &__content Card short description
   &__image
     width: 100px
     height: 100px

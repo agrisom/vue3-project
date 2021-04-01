@@ -25,6 +25,16 @@ const routes: Array<RouteRecordRaw> = [
     name: 'SampleButton',
     component: () => import('../components/Button/SampleButton.vue')
   },
+  {
+    path: '/sample/intersection',
+    name: 'InstersectionSample',
+    component: () => import('../views/samples/IntersectionSample.vue')
+  },
+  {
+    path: '/test',
+    name: 'Test',
+    component: () => import('../views/Test.vue')
+  },
 ]
 
 const router = createRouter({

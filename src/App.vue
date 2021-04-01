@@ -19,6 +19,7 @@ import { defineComponent } from 'vue'
 import LayoutBase from '@/layout/LayoutBase.vue'
 import Header from '@/layout/Header.vue'
 import Menu from '@/components/Menu/Menu.vue'
+import { links } from '@/store/globals';
 
 export default defineComponent({
   name: "App",
@@ -28,24 +29,7 @@ export default defineComponent({
     Menu,
   },
   data: () => ({
-    links: [
-      {
-        title: 'home',
-        pageName: 'Home',
-      }, {
-        title: 'about',
-        pageName: 'About',
-      }, {
-        title: 'components',
-        links: [{
-          title: 'layout',
-          pageName: 'SampleLayout',
-        }, {
-          title: 'Button',
-          pageName: 'SampleButton',
-        }],
-      },
-    ],
+    links,
   }),
 })
 </script>
