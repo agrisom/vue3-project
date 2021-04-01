@@ -7,30 +7,39 @@
 .box
 </template>
 
-<script>
-import { defineComponent } from 'vue';
+<script lang="ts">
+import { defineComponent, onMounted, ref, Ref } from 'vue';
 
 export default defineComponent({
   name: "InstersectionSample",
-  data: () => ({
-    observer: null,
-    options: {
+  setup() {
+    const isIntersecting: Ref<boolean> = ref(false);
+
+    const options = {
       threshold: 0,
       rootMargin: '-250px',
-    },
-    isIntersecting: false,
-  }),
-  mounted() {
-    this.observer = new IntersectionObserver(this.onElementObserved, this.options);
-    this.observer.observe(document.querySelector(".target"));
-  },
-  methods: {
-    onElementObserved(entries) {
+    };
+
+    function onElementObserved(entries: IntersectionObserverEntry[]): void {
       entries.forEach(entry => {
-        this.isIntersecting = entry.isIntersecting;
+        isIntersecting.value = entry.isIntersecting;
       });
-    },
-  }
+    }
+    
+    const observer = new IntersectionObserver(onElementObserved, options);
+    
+    onMounted(() => {
+      const target = document.querySelector(".target")
+      if(target) {
+        console.log(target);
+        observer.observe(target);
+      }
+    });
+
+    return {
+      isIntersecting,
+    };
+  },
 })
 </script>
 
