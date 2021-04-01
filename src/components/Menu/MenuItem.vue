@@ -63,10 +63,12 @@ export default defineComponent({
       bottom: 0
       right: 0
       transform: translateY(100%)
+      padding: 0 variables.$gutter*6
     &--column
+      padding-left: variables.$gutter*4
+      width: max-content
     &--open
       display: block
-      padding: 0 variables.$gutter*6
     & ul
       display: block
       li

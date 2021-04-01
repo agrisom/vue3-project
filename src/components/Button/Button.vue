@@ -41,7 +41,6 @@ export default defineComponent({
     border: none
     text-decoration: none
     text-transform: uppercase
-    padding: variables.$gutter*2
     background: transparent
     color: white
     cursor: pointer
@@ -57,8 +56,14 @@ export default defineComponent({
       &:hover
         background: var(--color-primary)
     &--sm
+      padding: variables.$gutter
+      font-size: variables.$gutter*3
     &--md
+      padding: variables.$gutter*2
+      font-size: variables.$gutter*4
     &--lg
+      padding: variables.$gutter*3
+      font-size: variables.$gutter*5
   &--block
     display: flex
   &--text
@@ -66,7 +71,6 @@ export default defineComponent({
     display: inline-flex
     .button
       &__item
-        font-size: 1em
         color: var(--link-color)
         background-color: transparent
         box-shadow: none

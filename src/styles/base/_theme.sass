@@ -1,4 +1,5 @@
 @use "../settings/colors"
+@use "../settings/functions"
 
 :root
   --color-primary: #{colors.$color-primary}
@@ -30,3 +31,6 @@
     @include dark-theme
     &.light-theme
       @include light-theme
+
+* 
+  @include functions.minimal-scrollbar
